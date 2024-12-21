@@ -1,0 +1,1026 @@
+/*Stert Varible Globle*/
+:root {
+    --main-color: #19c8fa;
+    --transparent-color: rgb(15 116 143 / 70%);
+    --section-padding: 100px;
+}
+/*End Varible Globle*/
+/* Stert Globle Rules*/
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.conter {
+    /* وانه ايضا يكون كله علي نفس المستوي     ماسك المحتوي الخاص فيك بالنص*/
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Stert Compont */
+.spazil-heading {
+    font-weight: normal;
+    font-size: 38px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+
+.spazil-heading::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background-color: black;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 24.8px);
+}
+
+.spazil-heading::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background: #fff;
+    border: 1px #000 solid;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 18.5px);
+}
+
+.pargref {
+    text-align: center;
+    color: #777;
+    max-width: 530px;
+    margin: 0 auto 100px;
+    line-height: 1.8;
+}
+
+.over-lay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 60%);
+    width: 100%;
+    height: 100%;
+}
+
+/* End Compont */
+
+/*==========================================
+=====================Resbive Desing
+==============================================*/
+
+/*الكونتر عرضه هيكون في المقاس الجوال الي اقل من هيك full scern*/
+
+/*Samal*/
+@media (min-width:768px) {
+    .conter {
+        width: 750px;
+    }
+}
+
+/*Madine*/
+@media (min-width:992px) {
+    .conter {
+        width: 970px;
+    }
+}
+
+/*Large*/
+@media (min-width:1200px) {
+    .conter {
+        width: 1170px;
+    }
+}
+
+/* End Globle Rules*/
+/* Stert Header */
+header {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+}
+
+header .conter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 98.05px;
+    position: relative;
+}
+
+header a img {
+    height: 40px;
+}
+
+header .conter::after {
+    content: "";
+    position: absolute;
+    background: #a2a2a2;
+    width: calc(100% - 30px);
+    height: 1px;
+    left: 15px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+header .mene {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .mene .fa-bars {
+    color: #fff;
+    font-size: 22px;
+}
+
+@media (min-width:768px) {
+    header .mene .fa-bars {
+        display: none;
+    }
+}
+
+header .mene ul {
+    display: flex;
+    list-style: none;
+}
+
+@media (max-width:767px) {
+    header .mene ul {
+        display: none;
+    }
+
+    header .mene .fa-bars:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 50%);
+    }
+
+    header .mene ul li a {
+        padding: 20px 5px !important;
+    }
+}
+
+header .mene ul li a {
+    display: block;
+    padding: 40px 10px;
+    font-size: 14px;
+    position: relative;
+    color: #fff;
+    transition: 0.4s ease;
+}
+
+header .mene ul li a:hover, header .mene ul li .active {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+header .mene div {
+    margin-left: 33px;
+}
+
+header .mene div i {
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    font-size: 20px;
+}
+
+header .mene div i::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    background-color: white;
+    left: -18px;
+    top: -5px;
+}
+
+/* End Header */
+/* Stert Lading */
+.home {
+    background-color: #1f2021;
+    background-image: url(../images/landing.jpg);
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+}
+
+.home .count {
+    width: 50%;
+    background: var(--transparent-color);
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+}
+@media (max-width:767px) {
+    .home .count {
+        width: 100%;
+    }
+}
+.home .count .text {
+    max-width: 500px;
+}
+
+.home .count .text h2 {
+    font-size: 32px;
+    line-height: 1.5;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.home .count .text p {
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.home>i {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.home>.fa-angle-left {
+    left: 30px;
+}
+
+.home>.fa-angle-right {
+    right: 30px;
+}
+
+.home .bullte {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.home .bullte div {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    margin-left: 10px;
+    border: 1px #fff solid;
+}
+
+.home .bullte .active {
+    border-color: var(--main-color);
+    background-color: var(--main-color);
+}
+
+/* End Lading */
+/* Stert Servese */
+.servese {
+    padding: var(--section-padding) 0;
+}
+@media (min-width:768px){
+    .servese .counte {
+        display: grid;
+        grid-template-columns: repeat(auto-fill , minmax(371px , 1fr));
+        gap: 35px;
+    }
+}
+.servese .counte .cured {
+    padding: 10px;
+    display: flex;
+}
+.servese .counte .cured  i {
+    font-size: 3.2rem;
+}
+.servese .counte .cured .text  {
+    margin-left: 32px;
+    margin-top: 10px;
+}
+.servese .counte .cured .text  h3 {
+    color: var(--main-color);
+    margin: 0 0 25px 0;
+}
+.servese .counte .cured .text  p  {
+    color: #777;
+    line-height: 1.9;
+}
+@media (max-width:767px) {
+    .servese .counte .cured {
+        flex-direction: column;
+        text-align: center;
+    }
+    .servese .counte .cured i {
+        margin-bottom: 20px;
+    }
+}
+/* End Servese */
+/* Stert Desing */
+.desing {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    width: 100%;
+    height: 87vh;
+    background-image: url(../images/design-features.jpg);
+    background-position: center;
+    background-size:cover ;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;/*قم باخفاء اي شي يكون خارج حدود الديف*/
+}
+.desing .text {
+    position: absolute;
+    right:0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    background-color: var(--transparent-color);
+    color: #fff;
+}
+.desing .text .info-txt {
+    padding: 50px;
+}
+.desing .text .info-txt h2 {
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+.desing .text .info-txt .info {
+    display: flex;
+    margin-bottom: 25px;
+}
+.desing .text .info-txt .info h3 {
+    font-weight: normal;
+}
+.desing .text .info-txt .info i {
+    margin-right: 20px;
+    font-size: 20px;
+}
+.desing .img{
+    position: absolute;
+    top: 40%;
+    left: 12%;
+}
+@media (max-width:767px){
+    .desing .text {
+        width: 100%;
+    }
+    .desing .img{
+        display: none;
+    }
+}
+/* End Desing */
+/* Stert Profile */
+.profile {
+    padding: var(--section-padding) 0;
+    text-align: center;
+}
+.profile .active{
+    background-color: var(--main-color);
+    color: #fff;
+}
+.profile .conter {
+    margin-bottom: 100px;
+}
+.profile span {
+    display: inline-block;
+    padding: 8px;
+    text-transform: capitalize;
+}
+.profile .conte {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px  ,1fr));
+    row-gap:5px;
+    margin-bottom:50px;
+}
+.profile .conte div {
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+    transition-timing-function: ease;
+}
+.profile .conte div:hover .captico {
+    top: 70%;
+}
+.profile .conte div .captico {
+    padding: 15px 20px;
+    text-align: left;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    z-index: 999;
+    text-transform: capitalize;
+}
+.profile .conte div .captico  p:last-child {
+    margin-top:10px ;
+    color: var(--main-color);
+}
+.profile .conte img {
+    max-width: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+.profile .conte img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+.profile a {
+    margin:auto;
+    display: block;
+    padding: 15px;
+    background:var(--main-color);
+    width: fit-content;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+/* End Profile */
+/* Stert Video */
+.veido {
+    position: relative;
+}
+.veido .treck-viedo {
+    width: 100%;
+}
+.veido .treck-viedo video {
+    max-width: 100%;
+}
+.veido .text {
+    background-color: var(--transparent-color);
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+}
+.veido .text h3 {
+    font-size: 25px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.veido .text p {
+    margin: 30px 0 30px;
+    text-transform: capitalize;
+}
+.veido .text a {
+    display: block;
+    padding: 10px 18px;
+    color: #fff;
+    background-color: #000;
+    width: fit-content;
+    text-transform: uppercase;
+    margin:auto ;
+}
+/* End Video */
+/* Stert About */
+.about {
+    padding-top:var(--section-padding);
+    overflow:hidden;
+    text-align:center;
+}
+.about .imgages {
+    margin-top: -120px;
+    position: relative;
+    bottom: -120px;
+}
+.about .imgages img {
+    max-width: 100%;
+}
+@media (max-width:767px){
+    .about .imgages {
+        margin-top: -60px;
+        bottom: -60px;
+    }
+}
+/* End About */
+/* Stert Stese */
+.stese {
+    padding: var(--section-padding) 0;
+    position: relative;
+    background-image: url(../images/stats.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+.stese .text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.stese .text .cured {
+    background-color: var(--transparent-color);
+    padding: 30px;
+    flex-basis:270px;
+    flex-grow: 1;
+}
+.stese .text .cured i {
+    font-size: 20px;
+    position: relative;
+    margin: 40px;
+}
+.stese .text .cured i::before{
+    position: relative;
+    z-index: 999;
+}
+.stese .text .cured i::after{
+    content: "";
+    position: absolute;
+    background-color: #000;
+    border-radius: 50%;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    left:50%;
+    top: 50%;
+    transform: translate(-50%  , -50%);
+    /* z-index: -1; قم بجعل العنصر في الاخر من الاب بتاعه */
+    /*اهم قاعده لازم تعرفه انه text-align pororty لا تشتغل مع flax*/
+}
+.stese .text .cured  div h2 {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.stese .text .cured  div p {
+    font-size: 14.5px;
+}
+/* End Stese */
+/* Stert Skils */
+.skils {
+    padding-top: var(--section-padding);
+    padding-bottom:var(--section-padding);
+}
+.skils .conter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@media (max-width:992px){
+    .skils .conter {
+        flex-direction: column;
+    }
+}
+@media (min-width:993px) {
+    .skils .conter > div {
+        flex-basis:45%;
+    }
+}
+.skils .testimonials {
+    padding: 10px;
+}
+.skils .testimonials > h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+.skils .testimonials > p{
+    text-align: center;
+    line-height: 1.8;
+    color: #777;
+    margin-bottom: 60px;
+}
+.skils .testimonials .conte {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.skils .testimonials .conte .text {
+    flex-basis: 80%;
+}
+.skils .testimonials .conte .text p:first-child {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.skils .testimonials .conte .text p:last-of-type {
+    color: #777;
+    text-align: end;
+    font-size: 14.5px;
+    margin-bottom: 15px;
+}
+.skils .testimonials .conte .imge1 , 
+.skils .testimonials .conte .imge2{
+    margin-right: 40px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+.skils .testimonials .conte .imge1 {
+    background-image: url(../images/skills-01.jpg);
+}
+.skils .testimonials .conte .imge2 {
+    background-image: url(../images/skills-02.jpg);
+}
+.skils .testimonials .bottom {
+    margin-top:67px;
+    margin-bottom:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+@media (max-width:768px){
+    .skils .testimonials .conte {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skils .testimonials .conte p:first-child {
+        margin: 10px 0;
+    }
+    .skils .testimonials .conte .imge1 , 
+.skils .testimonials .conte .imge2{
+    margin: 0;
+    }
+}
+.skils .testimonials .bottom li {
+    border-radius: 50%;
+    width:12px;
+    height:12px;
+    border: 1px solid #777;
+    margin: 5px;
+}
+.skils .testimonials .bottom .active {
+    border: none;
+    background-color: #19c8fa;
+}
+.skils .skil > h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+.skils .skil > p {
+    line-height: 1.8;
+    color: #777;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.skils .skil .cont .cured h4 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+.skils .skil .cont .cured {
+    margin-bottom: 40px;
+}
+.skils .skil .cont .cured .perg {
+    background: #777;
+    height: 30px;
+}
+.skils .skil .cont .cured .perg span{
+    display: block;
+    background:var(--main-color);
+    height: 100%;
+    position: relative;
+}
+.skils .skil .cont .cured .perg span::before{
+    content: "";
+    position: ABSOLUTE;
+    border: 8px #000 solid;
+    border-color: #000 transparent transparent;
+    top: -14px;
+    right: -6px;
+}
+.skils .skil .cont .cured .perg span::after{
+    content: attr(data-prtsge);
+    position: absolute;
+    top: -46px;
+    right: -13px;
+    background: #000;
+    color: #fff;
+    padding: 7px;
+    text-align: center;
+    border-radius: 3.5px;
+}
+/* End Skils */
+/* Start Quote */
+.qutoe {
+    padding: var(--section-padding) 0;
+    background-image: url(../images/quote.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.qutoe .conter{
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+.qutoe .conter q {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 30px;
+}
+/* End Quote */
+/* Stert Pring */
+.Pricing {
+    padding: var(--section-padding) 0;
+}
+.Pricing .conter{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+    gap: 30px;
+}
+.Pricing .conter .plan  {
+    background-color: #fcfcfc;
+    text-align: center;
+}
+.Pricing .conter .plan .head {
+    padding: 40px 20px;
+    border-bottom: 1px solid var(--main-color);
+    border-top: 1px solid var(--main-color);
+}
+.Pricing .conter .plan .head h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+.Pricing .conter .plan div span {
+    font-weight: bold;
+    font-size: 55px;
+    position: relative;
+}
+.Pricing .conter .plan div span::before{
+    content: "$";
+    font-size: 25px;
+    position: relative;
+    top: -40px;
+    margin-right: 15px;
+    font-weight: normal;
+}
+.Pricing .conter .plan div span::after{
+    content: "/Mo";
+    font-size: 20px;
+    position: relative;
+    right: -15px;
+}
+.Pricing .conter .plan ul{
+    list-style: none;
+    border-bottom: 1px solid var(--main-color);
+}
+.Pricing .conter .plan ul li{
+    padding: 20px;
+    position: relative;
+}
+.Pricing .conter .plan ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    background: var(--main-color);
+    height: 1px;
+    width: 142px;
+    top: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+.Pricing .conter .plan .foot a{
+    display: block;
+    margin: 30px 20px;
+    text-transform: capitalize;
+    font-size: 16px;
+    padding: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: var(--main-color) 1px solid;
+}
+.Pricing .pa{
+    text-align: center;
+    text-transform: capitalize;
+    margin: 30px 0 20px;
+    font-size: 18px;
+}
+.Pricing > a{
+    display: block;
+    background: var(--main-color);
+    padding: 15px 30px;
+    width: fit-content;
+    margin: auto;
+    font-size: 17px;
+    text-transform: capitalize;
+    color: #fff;
+}
+/* End Pring */
+/* Stert Subscribe */
+.subscribe {
+    padding: var(--section-padding) 0;
+    background-image: url(../images/subscribe.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+.subscribe .conter {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+@media (max-width:991px) {
+    .subscribe .conter {
+        flex-direction: column;
+    }
+}
+.subscribe form {
+    position: relative;
+    display: flex;
+    width: 500px;
+    max-width: 100%;
+}
+.subscribe form i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+    font-size: 20px;
+}
+.subscribe form input[type="email"]{
+    background: none;
+    border: 1px #fff solid;
+    border-right:none ;
+    padding: 20px 20px 20px 60px;
+    caret-color: var(--main-color);
+    width: calc(100% - 130px);
+}
+.subscribe form input[type="submit"]{
+    width: 130px;
+    color: #fff;
+    background-color: var(--main-color);
+    border: 1px #fff solid;
+    border-left:none ;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+.subscribe form ::placeholder {
+    color: #fff;
+}
+.subscribe form input[type="email"] ,
+.subscribe form input[type="submit"]:focus {
+    outline: none;
+}
+.subscribe .conter > p {
+    line-height: 2;
+    margin-left: 50px;
+}
+@media (max-width:991px) {
+    .subscribe .conter > p  {
+        margin: 30px 0 0;
+        text-align: center;
+    }
+}
+/* End Subscribe */
+/* Stert Contact */
+.contact {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.contact .conter {
+    display: flex;
+}
+@media (max-width:767px) {
+    .contact .conter {
+        flex-direction: column;
+    }
+    .contact .conter .text {
+        order: -1;
+        text-align: center;
+        margin-bottom:50px;
+    }
+}
+.contact .conter form {
+    flex-basis: 70%;
+    position: relative;
+}
+.contact .conter form input {
+    outline: none;
+    padding: 20px;
+    border: 1px solid #777;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.contact .conter form textarea {
+    padding: 20px;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 20px;
+    border: 1px solid #777;
+    outline: none;
+}
+.contact .conter form input[type="submit"]{
+    cursor: pointer;
+    padding: 20px;
+    width: fit-content;
+    border: none;
+    background: var(--main-color);
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    right: 0px;
+    top: 100%;
+}
+.contact .conter .text {
+    flex-basis: 25%;
+}
+.contact .conter .text .first {
+    margin-bottom: 80px;
+    margin-left: 50px;
+}
+.contact .conter .text .second {
+    margin-left: 50px;
+}
+.contact .conter .text .first  h4 {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.contact .conter .text .first p {
+    color: #777;
+    margin-bottom: 10px;
+}
+.contact .conter .text .second h4 {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.contact .conter .text .second p {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+    line-height: 2;
+}
+/* End Contact */
+/* Stert Fotter */
+.footer {
+    padding-top: calc( var(--section-padding) / 2);
+    padding-bottom: calc( var(--section-padding) / 2);
+    background-image: url(../images/subscribe.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.footer .conter {
+    text-align:center ;
+    color: #fff;
+    position: relative;
+}
+.footer .conter img {
+    height: 40px;
+    margin-bottom: 40px;
+}
+.footer .conter p:nth-child(2){
+    text-transform:uppercase;
+    font-size:22px;
+    margin-bottom:50px;
+    position:relative;
+}
+.footer .conter p:nth-child(2):after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    height: 1px;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+}
+.footer .conter div i{
+    margin-right: 15px;
+    margin-bottom: 50px;
+}
+.footer .conter p:last-child {
+    text-transform: capitalize;
+}
+.footer .conter p:last-child span {
+    color: var(--main-color);
+    text-transform: capitalize;
+}
+/* End Fotter */
